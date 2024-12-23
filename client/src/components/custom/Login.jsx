@@ -62,7 +62,10 @@ function Login() {
      
       localStorage.setItem("Email",email);
       console.log(email);
-      const response = await axios.post('https://ai-travelplanner-p721.onrender.com/loginvalid', {email, password});
+      const response = await axios.post('https://ai-travelplanner-p721.onrender.com/loginvalid', {
+      email:email,
+      password:password
+    });
       console.log(response.data);
       const username=response.data.username;
       localStorage.setItem("name",username)

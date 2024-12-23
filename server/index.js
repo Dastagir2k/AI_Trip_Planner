@@ -198,7 +198,8 @@ console.log(username);
     }
 });
 app.post('/loginvalid',async(req,res)=>{
-  const{email,password}=req.body;
+  const email =req.body.email;
+  const password=req.body.password;
   if(!email || !password){
     return res.status(400).json({ message: 'All fields are required' });
   }
@@ -210,6 +211,8 @@ app.post('/loginvalid',async(req,res)=>{
     if (password !== Existinguser.password) {
       return res.status(401).json({ message: 'Invalid email or password' });
     }
+    console.log(Existinguser);
+    
     res.status(200).json(Existinguser);
   }
   catch(err){
