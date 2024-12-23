@@ -101,14 +101,18 @@ Generate a travel plan for the following details with exact number of days:
             return res.status(500).json({ error: "Failed to generate travel plan." });
         }
        
-
-        const tripData=result.response.text();
-        console.log(tripData)
-        res.status(200).json(tripData);
-        const parse=JSON.parse(tripData);
+        const tripData = await result.response.text();
+        console.log("Raw trip data:", tripData);
+    
+        // Ensure it is valid JSON
+        const parse = JSON.parse(tripData); // This will throw if invalid
+        console.log("Parsed trip data:", parse);
+    
         const newTrip = new Plan(parse);
         const savedTrip = await newTrip.save();
         console.log("Trip data saved:", savedTrip);
+    
+        res.status(200).json({ success: true, data: parse });
     } catch (err) {
         console.error("Error in /gemini route:", err.message);
         res.status(500).json({ error: "Internal server error." });
