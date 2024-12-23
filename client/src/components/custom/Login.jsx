@@ -86,6 +86,11 @@ function Login() {
     }
   };
 
+  const navToSignup=()=>{
+    const navigate=useNavigate();
+    navigate("/signup")
+  }
+
   return (
     <div className="min-h-screen bg-slate-200">
       <h2 className="text-4xl text-center py-10 font-mono">Travel planner</h2>
@@ -137,7 +142,7 @@ function Login() {
               </Button>
             </div>
             <div className="mt-5 text-center">
-              <p>Don't have an account? <a href="/signup" className="text-blue-500">Sign up</a></p>
+              <p>Don't have an account? <a onClick={navToSignup} className="text-blue-500">Sign up</a></p>
             </div>
           </div>
         </div>
