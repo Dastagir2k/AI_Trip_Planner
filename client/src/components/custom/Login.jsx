@@ -86,8 +86,10 @@ function Login() {
     }
   };
 
+  
   const navToSignup=()=>{
-    const navigate=useNavigate();
+    console.log("nav to signupp");
+    
     navigate("/signup")
   }
 
@@ -142,7 +144,7 @@ function Login() {
               </Button>
             </div>
             <div className="mt-5 text-center">
-              <p>Don't have an account? <a onClick={navToSignup} className="text-blue-500">Sign up</a></p>
+              <p>Don't have an account? <div onClick={navToSignup} className="text-blue-500">Sign up</div></p>
             </div>
           </div>
         </div>
