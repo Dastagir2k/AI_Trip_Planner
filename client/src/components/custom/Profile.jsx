@@ -41,7 +41,7 @@ export default function Profile() {
     }
   }, []);
 
-  console.log("HIiii");
+  console.log("HIiiiiiiii");
   useEffect(() => {
     const fetchWishlist = async () => {
       try {
