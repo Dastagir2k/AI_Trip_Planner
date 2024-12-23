@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CreateTrip from './create-trip';
 import { Toaster } from './components/ui/sonner';
-import Headers from './components/custom/Header';
 import Login from './components/custom/Login';
 import Signup from './components/custom/Signup';
 import View from './TripDetails/View';
@@ -13,7 +12,6 @@ import Hero from './components/custom/Hero';
 function App() {
   return (
     <Router>
-      <Headers />
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/create-trip" element={<CreateTrip />} />
